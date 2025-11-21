@@ -38,6 +38,7 @@
   {{
     {
       formulario: {
+        value: formulario.value,
         valid: formulario.valid,
         invalid: formulario.invalid,
         pending: formulario.pending,
@@ -48,11 +49,51 @@
         status: formulario.status
       },
       controles: {
-        nombre: formulario.get('nombre'),
-        email: formulario.get('email'),
-        username: formulario.get('username'),
-        password: formulario.get('password'),
-        confirmPassword: formulario.get('confirmPassword')
+        nombre: {
+          value: formulario.get('nombre')?.value,
+          errors: formulario.get('nombre')?.errors,
+          status: formulario.get('nombre')?.status,
+          dirty: formulario.get('nombre')?.dirty,
+          touched: formulario.get('nombre')?.touched,
+          pristine: formulario.get('nombre')?.pristine,
+          pending: formulario.get('nombre')?.pending
+        },
+        email: {
+          value: formulario.get('email')?.value,
+          errors: formulario.get('email')?.errors,
+          status: formulario.get('email')?.status,
+          dirty: formulario.get('email')?.dirty,
+          touched: formulario.get('email')?.touched,
+          pristine: formulario.get('email')?.pristine,
+          pending: formulario.get('email')?.pending
+        },
+        username: {
+          value: formulario.get('username')?.value,
+          errors: formulario.get('username')?.errors,
+          status: formulario.get('username')?.status,
+          dirty: formulario.get('username')?.dirty,
+          touched: formulario.get('username')?.touched,
+          pristine: formulario.get('username')?.pristine,
+          pending: formulario.get('username')?.pending
+        },
+        password: {
+          value: formulario.get('password')?.value,
+          errors: formulario.get('password')?.errors,
+          status: formulario.get('password')?.status,
+          dirty: formulario.get('password')?.dirty,
+          touched: formulario.get('password')?.touched,
+          pristine: formulario.get('password')?.pristine,
+          pending: formulario.get('password')?.pending
+        },
+        confirmPassword: {
+          value: formulario.get('confirmPassword')?.value,
+          errors: formulario.get('confirmPassword')?.errors,
+          status: formulario.get('confirmPassword')?.status,
+          dirty: formulario.get('confirmPassword')?.dirty,
+          touched: formulario.get('confirmPassword')?.touched,
+          pristine: formulario.get('confirmPassword')?.pristine,
+          pending: formulario.get('confirmPassword')?.pending
+        }
       }
     }
     | json
