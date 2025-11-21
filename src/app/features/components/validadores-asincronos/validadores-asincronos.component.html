@@ -33,5 +33,30 @@
   </span>
 
   <button type="submit">Enviar</button>
+
+  <pre>
+  {{
+    {
+      formulario: {
+        valid: formulario.valid,
+        invalid: formulario.invalid,
+        pending: formulario.pending,
+        touched: formulario.touched,
+        untouched: formulario.untouched,
+        dirty: formulario.dirty,
+        pristine: formulario.pristine,
+        status: formulario.status
+      },
+      controles: {
+        nombre: formulario.get('nombre'),
+        email: formulario.get('email'),
+        username: formulario.get('username'),
+        password: formulario.get('password'),
+        confirmPassword: formulario.get('confirmPassword')
+      }
+    }
+    | json
+  }}
+  </pre>
 </form>
 

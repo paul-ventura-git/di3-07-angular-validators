@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ControlContainer, FormGroup, FormGroupDirective, ReactiveFormsModule } from '@angular/forms';
+import { ControlContainer, FormBuilder, FormGroupDirective, ReactiveFormsModule, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-formularios-anidados-hijo',
@@ -8,20 +8,14 @@ import { ControlContainer, FormGroup, FormGroupDirective, ReactiveFormsModule } 
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './formularios-anidados-hijo.component.html',
   styleUrls: ['./formularios-anidados-hijo.component.css'],
+
+  // Mantenerlos no afecta, pero ya no son necesarios para esta solución
   viewProviders: [
     { provide: ControlContainer, useExisting: FormGroupDirective }
   ]
 })
 export class FormulariosAnidadosHijoComponent {
-  @Input() formGroup!: FormGroup;
 
-  constructor(private container: ControlContainer) {}
+  @Input() group!: FormGroup;   // Recibe el FormGroup desde el padre
 
-  ngOnInit(): void {
-    // Esto solo obtiene el formGroup "direccion"
-    const direccionGroup = this.container.control;
-    console.log('Grupo direccion recibido:', direccionGroup);
-  }
 }
-
-

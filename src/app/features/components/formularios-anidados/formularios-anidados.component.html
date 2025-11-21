@@ -1,10 +1,20 @@
+<h2>Formulario Anidado (Padre + Hijo)</h2>
+
 <form [formGroup]="formulario" (ngSubmit)="enviar()">
 
-  <!-- Al menos 1 control del PADRE -->
-  <label>Nombre</label>
-  <input formControlName="nombre">
+  <!-- Nombre -->
+  <label>Nombre:</label>
+  <input type="text" formControlName="nombre">
+  <br>
 
-  <!-- Ahora sí el hijo puede leer el ControlContainer -->
-  <app-formularios-anidados-hijo formGroupName="direccion"></app-formularios-anidados-hijo>
+  <!-- IMPORTANTE: El hijo DEBE estar DENTRO del formGroupName -->
+  <div formGroupName="direccion">
+    <app-formularios-anidados-hijo></app-formularios-anidados-hijo>
+  </div>
+
+  <br>
+  <button type="submit">Enviar</button>
 
 </form>
+
+<pre>{{ formulario.value | json }}</pre>
