@@ -1,0 +1,10 @@
+<form [formGroup]="formulario" (ngSubmit)="enviar()">
+
+  <!-- Al menos 1 control del PADRE -->
+  <label>Nombre</label>
+  <input formControlName="nombre">
+
+  <!-- Ahora sí el hijo puede leer el ControlContainer -->
+  <app-formularios-anidados-hijo formGroupName="direccion"></app-formularios-anidados-hijo>
+
+</form>

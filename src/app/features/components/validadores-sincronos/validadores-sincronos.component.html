@@ -1,0 +1,47 @@
+<h2>Formulario con Validadores Síncronos</h2>
+
+<form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+
+  <!-- Nombre -->
+  <label>Nombre:</label>
+  <input type="text" formControlName="nombre" />
+  <small *ngIf="formulario.controls['nombre'].invalid && formulario.controls['nombre'].touched">
+    Nombre requerido (mínimo 3 caracteres)
+  </small>
+  <br/><br/>
+
+  <!-- Email -->
+  <label>Email:</label>
+  <input type="email" formControlName="email" />
+  <small *ngIf="formulario.controls['email'].invalid && formulario.controls['email'].touched">
+    Email inválido o requerido
+  </small>
+  <br/><br/>
+
+  <!-- Teléfono -->
+  <label>Teléfono:</label>
+  <input type="text" formControlName="telefono" />
+  <small *ngIf="formulario.controls['telefono'].invalid && formulario.controls['telefono'].touched">
+    Debe ser un teléfono de 9 dígitos
+  </small>
+  <br/><br/>
+
+  <!-- Edad -->
+  <label>Edad:</label>
+  <input type="number" formControlName="edad" />
+  <small *ngIf="formulario.controls['edad'].invalid && formulario.controls['edad'].touched">
+    Edad requerida (solo números)
+  </small>
+  <br/><br/>
+
+  <!-- Ciudad -->
+  <label>Ciudad:</label>
+  <input type="text" formControlName="ciudad" />
+  <small *ngIf="formulario.controls['ciudad'].invalid && formulario.controls['ciudad'].touched">
+    Ciudad requerida (mínimo 2 caracteres)
+  </small>
+  <br/><br/>
+
+  <button type="submit">Enviar</button>
+
+</form>
